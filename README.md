@@ -4,7 +4,7 @@ This is a simple boilerplate for Express + EJS projects.
 ## 📋 Summary
 
 - [Install](#-Install)
-- [Directory structure](#-Directorystructure)
+- [Basic Structure](#-Basic-Structure)
 - [Technologies](#-Technologies)
 - [Preview](#-Preview)
 
@@ -26,7 +26,7 @@ Server will start at port :8000 - access `http://localhost:8000`
 
 --- 
 
-### 📄 Directory structure
+### 📄 Basic Structure
 ``` bash
 ├───public
 │   ├───images
@@ -55,5 +55,3 @@ Server will start at port :8000 - access `http://localhost:8000`
 ### 📌 Preview
 
 ![Boilerplate](https://user-images.githubusercontent.com/34722707/134422100-d6289baa-9a48-4faf-89d1-8c265b25247b.png)
-
-
