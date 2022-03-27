@@ -5,13 +5,38 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home</title>
-    <link rel="stylesheet" href="/styles/style.css" />
+    <link rel="stylesheet" href="/css/style.css" />
   </head>
   <body>
-    <input type="text" style="width: 150px" placeholder="Name" />
-    <input type="text" style="width: 150px" placeholder="placeholder2" />
-    <input type="text" style="width: 150px" placeholder="placeholder3" />
-    <input type="text" style="width: 150px" placeholder="placeholder4" />
-    <script src="/scripts/main.js"></script>
+    <form action="/inform" method="post">
+      <div>
+        <input
+          type="text"
+          style="width: 150px"
+          name="item1"
+          placeholder="input1"
+        />
+        <input
+          type="text"
+          style="width: 150px"
+          name="item2"
+          placeholder="input2"
+        />
+        <input
+          type="text"
+          style="width: 150px"
+          name="item3"
+          placeholder="input3"
+        />
+        <input
+          type="text"
+          style="width: 150px"
+          name="item4"
+          placeholder="input4"
+        />
+      </div>
+      <input type="submit" value="제출" />
+    </form>
+    <!-- <script src="/scripts/main.js"></script> -->
   </body>
 </html>
