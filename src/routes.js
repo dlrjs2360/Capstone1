@@ -9,6 +9,9 @@ router.get("/", (req, res) => {
 router.get("/button", (req, res) => {
   res.render("button")
 })
+router.get("/result", (req, res) => {
+  res.render("result")
+})
 
 router.post("/inform", (req, res) => {
   const { item1, item2, item3, item4 } = req.body
