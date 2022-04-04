@@ -11,12 +11,15 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "dotenv": "^16.0.0",
     "ejs": "^3.1.6",
     "events": "^3.3.0",
     "express": "^4.17.1",
     "gsap": "^3.9.1",
     "hammer": "^0.0.5",
     "jquery": "^3.6.0",
+    "mongodb": "^4.4.1",
+    "mongoose": "^6.2.9",
     "parcel-bundler": "^1.12.5",
     "sass": "^1.49.10"
   },

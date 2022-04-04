@@ -1,6 +1,8 @@
 import express from "express"
 import path from "path"
 import router from "./src/routes.js"
+import { connectDB } from "./src/database.js"
+import { config } from "./src/config.js"
 
 const app = express()
 const __dirname = path.resolve()
@@ -14,7 +16,10 @@ app.set("views", path.join(__dirname, "src", "views"))
 
 app.use(router)
 
-app.listen(8000, () => {
-  console.log("Access through http://localhost:8000")
-  console.log("Server running...")
-})
+connectDB()
+  .then(() => {
+    app.listen(config.port.port, () => {
+      console.log(`Server is running`)
+    })
+  })
+  .catch(console.error)
