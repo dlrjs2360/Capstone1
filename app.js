@@ -19,7 +19,7 @@ app.use(router)
 connectDB()
   .then(() => {
     app.listen(config.port.port, () => {
-      console.log(`Server is running`)
+      console.log(`Server is running on http://localhost:${config.port.port}`)
     })
   })
   .catch(console.error)

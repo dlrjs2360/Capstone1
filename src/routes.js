@@ -8,12 +8,6 @@ const router = express.Router()
 router.get("/", (req, res) => {
   res.render("index")
 })
-router.get("/button", (req, res) => {
-  res.render("button")
-})
-router.get("/result", (req, res) => {
-  res.render("result")
-})
 
 // ------------------ Request --------------------------------//
 
