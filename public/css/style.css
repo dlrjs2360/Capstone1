@@ -7,8 +7,6 @@ html {
   border: 2px solid whitesmoke;
   border-radius: 15px;
   position: relative;
-  width: 50%;
-  left: 25%;
   margin-top: 30%;
   padding: 30px 10px 30px 10px;
   background-color: rgb(38, 38, 38);
@@ -27,12 +25,10 @@ body {
   -webkit-text-size-adjust: 100%;
 }
 .work-request--information .information-name {
-  position: relative;
-  width: 50%;
-  left: 25%;
   height: 50px;
   font-size: 25px;
   font-weight: 300;
+  margin-top: 5px;
 }
 .work-request--information input[type="text"] {
   width: 100%;
