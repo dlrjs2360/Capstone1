@@ -190,13 +190,13 @@ html {
 body {
   background-color: #935d8c;
   background-image: url("images/overlay.png"),
-    -moz-linear-gradient(45deg, #e37682 15%, #5f4d93 85%);
+    -moz-linear-gradient(45deg, #ff9a68 15%, #5c77ee 85%);
   background-image: url("images/overlay.png"),
-    -webkit-linear-gradient(45deg, #e37682 15%, #5f4d93 85%);
+    -webkit-linear-gradient(45deg, #ff9a68 15%, #5c77ee 85%);
   background-image: url("images/overlay.png"),
-    -ms-linear-gradient(45deg, #e37682 15%, #5f4d93 85%);
+    -ms-linear-gradient(45deg, #ff9a68 15%, #5c77ee 85%);
   background-image: url("images/overlay.png"),
-    linear-gradient(45deg, #e37682 15%, #5f4d93 85%);
+    linear-gradient(45deg, #ff9a68 15%, #5c77ee 85%);
 }
 
 body.is-preload *,
@@ -3792,12 +3792,12 @@ body.is-preload #header.alt .logo {
 
 #footer > * {
   width: calc(50% - 2em);
-  margin-left: 2em;
+  margin-left: 1em;
 }
 
 #footer .copyright {
   width: 100%;
-  margin: 2.5em 0 2em 0;
+  margin: 5em 0 0em 0;
   font-size: 0.8em;
   text-align: center;
 }
@@ -3870,7 +3870,7 @@ html {
   -webkit-text-size-adjust: 100%;
 }
 .input-box {
-  border: 2px solid whitesmoke;
+  border: 2px solid rgb(175, 129, 129);
   border-radius: 15px;
   margin-top: 30%;
   margin: auto;

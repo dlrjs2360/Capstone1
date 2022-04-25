@@ -110,67 +110,18 @@
       <!-- Main -->
       <div id="main">
         <!-- Introduction -->
-        <section id="intro" class="main">
+        <section id="intro" class="main special">
           <div class="spotlight">
             <div class="content">
               <header class="major">
                 <h2>Ipsum sed adipiscing</h2>
               </header>
-              <!-- 임시 입력 및 제출 form -->
-              <div class="input-box">
-                <form action="/newInput" method="post">
-                  <div class="work-request--information">
-                    <div class="information-name">
-                      <input name="name" type="text" spellcheck="false" />
-                      <label for="name">닉네임</label>
-                    </div>
-                    <br />
-                    <div class="information-name">
-                      <input name="region" type="text" spellcheck="false" />
-                      <label>거주 지역</label>
-                    </div>
-                    <br />
-                    <div class="information-name">
-                      <input
-                        name="fee"
-                        type="text"
-                        spellcheck="false"
-                        numberOnlyMinComma="true"
-                        koreanCurrency="true"
-                      />
-                      <label>해당 월 전기 요금</label>
-                    </div>
-                  </div>
-                </form>
-              </div>
-              <div style="text-align: center">
-                <br />
-                <button type="submit" class="btn btn-primary btn-lg">
-                  제출
-                </button>
-              </div>
-              <!-- 인풋 라벨 관련 스크립트 -->
-              <script>
-                $(".work-request--information input").focusout(function () {
-                  var textVal = $(this).val()
 
-                  if (textVal === "") {
-                    $(this).removeClass("has-value")
-                  } else {
-                    $(this).addClass("has-value")
-                  }
-
-                  // correct mobile device window position
-                  window.scrollTo(0, 0)
-                })
-              </script>
-
-              <ul class="actions">
-                <li><a href="generic.html" class="button">Learn More</a></li>
-              </ul>
-            </div>
-            <span class="image"><img src="/images/pic01.jpg" alt="" /></span>
-          </div>
+              <footer class="major">
+                <ul class="actions special">
+                  <li><a href="generic.html" class="button">Learn More</a></li>
+                </ul>
+              </footer>
         </section>
 
         <!-- First Section -->

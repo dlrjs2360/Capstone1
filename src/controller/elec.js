@@ -23,11 +23,13 @@ const Elec = mongoose.model("Elec", elecSchema)
 
 export async function newInput(req, res) {
   const { name, fee, region } = req.body
+  const temp = parseInt(fee.split("원")[0])
+
   new Elec({
     name: name,
-    fee: fee,
+    fee: temp,
     region: region,
   }).save()
   console.log(`이름:${name} 지역:${region} 전기요금: ${fee}`)
-  res.redirect("/")
+  res.redirect("/result")
 }
