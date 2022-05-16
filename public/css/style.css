@@ -29,6 +29,7 @@ body {
   font-size: 25px;
   font-weight: 300;
   margin-top: 5px;
+  width: 50px;
 }
 .work-request--information input[type="text"] {
   width: 100%;

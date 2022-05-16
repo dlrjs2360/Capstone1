@@ -190,13 +190,13 @@ html {
 body {
   background-color: #935d8c;
   background-image: url("images/overlay.png"),
-    -moz-linear-gradient(45deg, #ff9a68 15%, #5c77ee 85%);
+    -moz-linear-gradient(45deg, #777777 15%, #5b6bb4 85%);
   background-image: url("images/overlay.png"),
-    -webkit-linear-gradient(45deg, #ff9a68 15%, #5c77ee 85%);
+    -webkit-linear-gradient(45deg, #777777 15%, #5b6bb4 85%);
   background-image: url("images/overlay.png"),
-    -ms-linear-gradient(45deg, #ff9a68 15%, #5c77ee 85%);
+    -ms-linear-gradient(45deg, #777777 15%, #5b6bb4 85%);
   background-image: url("images/overlay.png"),
-    linear-gradient(45deg, #ff9a68 15%, #5c77ee 85%);
+    linear-gradient(45deg, #777777 15%, #5b6bb4 85%);
 }
 
 body.is-preload *,
@@ -2065,7 +2065,7 @@ input[type="reset"].primary,
 input[type="button"].primary,
 button.primary,
 .button.primary {
-  background-color: #8cc9f0;
+  background-color: #19191a;
   color: #ffffff !important;
   box-shadow: none;
 }
@@ -2265,8 +2265,8 @@ input[type="password"]:focus,
 input[type="email"]:focus,
 select:focus,
 textarea:focus {
-  border-color: #8cc9f0;
-  box-shadow: 0 0 0 1px #8cc9f0;
+  border-color: #19191a;
+  box-shadow: 0 0 0 1px #19191a;
 }
 
 select {
@@ -2298,8 +2298,8 @@ input[type="radio"]:checked + label:before {
 
 input[type="checkbox"]:focus + label:before,
 input[type="radio"]:focus + label:before {
-  border-color: #8cc9f0;
-  box-shadow: 0 0 0 1px #8cc9f0;
+  border-color: #19191a;
+  box-shadow: 0 0 0 1px #19191a;
 }
 
 ::-webkit-input-placeholder {
@@ -2399,7 +2399,7 @@ input[type="radio"]:focus + label:before {
 }
 
 .icon.style1 {
-  color: #efa8b0;
+  color: #7a7979;
 }
 
 .icon.style2 {
@@ -2415,7 +2415,7 @@ input[type="radio"]:focus + label:before {
 }
 
 .icon.style5 {
-  color: #8cc9f0;
+  color: #19191a;
 }
 
 @media screen and (max-width: 1680px) {
@@ -2985,7 +2985,7 @@ table.alt tbody tr td {
 }
 
 .statistics li.style1 {
-  background-color: #efa8b0;
+  background-color: #7a7979;
 }
 
 .statistics li.style2 {
@@ -3001,7 +3001,7 @@ table.alt tbody tr td {
 }
 
 .statistics li.style5 {
-  background-color: #8cc9f0;
+  background-color: #19191a;
 }
 
 .statistics li strong,
@@ -3516,7 +3516,7 @@ body.is-preload #header.alt .logo {
 #main input[type="button"].primary,
 #main button.primary,
 #main .button.primary {
-  background-color: #8cc9f0;
+  background-color: #19191a;
   color: #ffffff !important;
   box-shadow: none;
 }
@@ -3563,8 +3563,8 @@ body.is-preload #header.alt .logo {
 #main input[type="email"]:focus,
 #main select:focus,
 #main textarea:focus {
-  border-color: #8cc9f0;
-  box-shadow: 0 0 0 1px #8cc9f0;
+  border-color: #19191a;
+  box-shadow: 0 0 0 1px #19191a;
 }
 
 #main select {
@@ -3596,8 +3596,8 @@ body.is-preload #header.alt .logo {
 
 #main input[type="checkbox"]:focus + label:before,
 #main input[type="radio"]:focus + label:before {
-  border-color: #8cc9f0;
-  box-shadow: 0 0 0 1px #8cc9f0;
+  border-color: #19191a;
+  box-shadow: 0 0 0 1px #19191a;
 }
 
 #main ::-webkit-input-placeholder {
@@ -3651,10 +3651,10 @@ body.is-preload #header.alt .logo {
 
 #main header.major h2:after {
   background-color: #dddddd;
-  background-image: -moz-linear-gradient(90deg, #efa8b0, #a89cc8, #8cc9f0);
-  background-image: -webkit-linear-gradient(90deg, #efa8b0, #a89cc8, #8cc9f0);
-  background-image: -ms-linear-gradient(90deg, #efa8b0, #a89cc8, #8cc9f0);
-  background-image: linear-gradient(90deg, #efa8b0, #a89cc8, #8cc9f0);
+  background-image: -moz-linear-gradient(90deg, #7a7979, #a89cc8, #19191a);
+  background-image: -webkit-linear-gradient(90deg, #7a7979, #a89cc8, #19191a);
+  background-image: -ms-linear-gradient(90deg, #7a7979, #a89cc8, #19191a);
+  background-image: linear-gradient(90deg, #7a7979, #a89cc8, #19191a);
 }
 
 #main table tbody tr {

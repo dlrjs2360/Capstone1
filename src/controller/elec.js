@@ -1,35 +1,66 @@
 import mongoose from "mongoose"
+import spawn from "child_process"
 
 const elecSchema = mongoose.Schema({
-  name: {
+  Year: {
     type: String,
     required: true,
   },
-  fee: {
+  Month: {
+    type: String,
+    required: true,
+  },
+  Goo: {
+    type: String,
+    required: true,
+  },
+  Goo: {
+    type: String,
+    required: true,
+  },
+  Fee: {
     type: Number,
     required: true,
-  },
-  region: {
-    type: String,
-    required: true,
-  },
-  date: {
-    type: Date,
-    default: Date.now(),
   },
 })
 
 const Elec = mongoose.model("Elec", elecSchema)
 
-export async function newInput(req, res) {
-  const { name, fee, region } = req.body
-  const temp = parseInt(fee.split("원")[0])
+const spawn2 = spawn.spawn
 
-  new Elec({
-    name: name,
-    fee: temp,
-    region: region,
-  }).save()
-  console.log(`이름:${name} 지역:${region} 전기요금: ${fee}`)
-  res.redirect("/result")
+const today = new Date()
+const Pyear = today.getFullYear()
+const Pmonth = today.getMonth()
+
+export async function Tohome(req, res) {
+  res.render("home")
+}
+
+export async function newInput(req, res) {
+  let { Year, Month, See, Goo, Fee } = req.body
+  console.log("클라이언트에서 받은 값", Year, Month, See, Goo, Fee)
+  const temp = Fee.split("원")[0].replace(",", "")
+
+  Fee = parseInt(temp)
+
+  console.log("파이썬으로 넘어가는 값", Year, Month, See, Goo, Fee)
+
+  const fromPy = spawn2("python", ["hhh.py", Year, Month, See, Goo, Fee])
+
+  fromPy.stdout.on("data", function (data) {
+    const result = data.toString()
+    const data_split = result.split(" ")
+    console.log("파이썬으로부터 받은 값", data_split)
+    if (Year == Pyear && Month == Pmonth) {
+      new Elec({
+        Year,
+        Month,
+        See,
+        Goo,
+        Fee,
+      }).save()
+    }
+    data_split[3] = `/images/${data_split[3]}.png`
+    res.render("result", { data: data_split })
+  })
 }
