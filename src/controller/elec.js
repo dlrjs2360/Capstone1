@@ -36,6 +36,16 @@ export async function Tohome(req, res) {
   res.render("home")
 }
 
+// export async function newInput(req, res) {
+//   let { Year, Month, See, Goo, Fee } = req.body
+//   const temp = Fee.split("원")[0].replace(",", "")
+//   Fee = parseInt(temp)
+//   console.log("날짜: ", Year, Month, "지역: ".See, Goo, "요금: ", Fee)
+//   res.render("result", {
+//     data: { Year, Month, See, Goo, Fee },
+//   })
+// }
+
 export async function newInput(req, res) {
   let { Year, Month, See, Goo, Fee } = req.body
   console.log("클라이언트에서 받은 값", Year, Month, See, Goo, Fee)
@@ -44,7 +54,7 @@ export async function newInput(req, res) {
   Fee = parseInt(temp)
 
   console.log("파이썬으로 넘어가는 값", Year, Month, See, Goo, Fee)
-
+  console.time("연산시간")
   const fromPy = spawn2("python", ["hhh.py", Year, Month, See, Goo, Fee])
 
   fromPy.stdout.on("data", function (data) {
@@ -61,6 +71,11 @@ export async function newInput(req, res) {
       }).save()
     }
     data_split[3] = `/images/${data_split[3]}.png`
+    data_split[4] = `/rank/${data_split[2]}.png`
+    console.timeEnd("연산시간")
+    console.log(
+      "================================================================="
+    )
     res.render("result", { data: data_split })
   })
 }
