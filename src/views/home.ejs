@@ -377,7 +377,6 @@
       <!-- Header -->
       <header id="header" class="alt">
         <h1>ECTI</h1>
-        ##################################
       </header>
 
       <!-- Main -->
@@ -388,129 +387,166 @@
             <div class="content">
               <!-- 임시 입력 및 제출 form -->
               <form action="/newInput" method="post">
-                <div>
-                  <h3>날짜</h3>
-                  <select
-                    class="form-select"
-                    aria-label="Default select example"
-                    style="width: 35%"
-                    name="Year"
-                  >
-                    <option selected>년도를 선택하세요</option>
-                    <option value="2014">2014년</option>
-                    <option value="2015">2015년</option>
-                    <option value="2016">2016년</option>
-                    <option value="2017">2017년</option>
-                    <option value="2018">2018년</option>
-                    <option value="2019">2019년</option>
-                    <option value="2020">2020년</option>
-                    <option value="2021">2021년</option>
-                    <option value="2022">2022년</option>
-                  </select>
-
-                  <select
-                    class="form-select"
-                    aria-label="Default select example"
-                    style="width: 35%"
-                    name="Month"
-                  >
-                    <option selected>월을 선택하세요</option>
-                    <option value="1">1월</option>
-                    <option value="2">2월</option>
-                    <option value="3">3월</option>
-                    <option value="4">4월</option>
-                    <option value="5">5월</option>
-                    <option value="6">6월</option>
-                    <option value="7">7월</option>
-                    <option value="8">8월</option>
-                    <option value="9">9월</option>
-                    <option value="10">10월</option>
-                    <option value="11">11월</option>
-                    <option value="12">12월</option>
-                  </select>
+                <div style="text-align: center">
+                  <h2>날짜를 선택하세요</h2>
+                  <div style="display: flex; margin-left: 25%">
+                    <select
+                      class="form-select"
+                      aria-label="Default select example"
+                      style="width: 35%"
+                      name="Year"
+                    >
+                      <option selected style="text-align: center">년도</option>
+                      <option value="2014" style="text-align: center">
+                        2014년
+                      </option>
+                      <option value="2015" style="text-align: center">
+                        2015년
+                      </option>
+                      <option value="2016" style="text-align: center">
+                        2016년
+                      </option>
+                      <option value="2017" style="text-align: center">
+                        2017년
+                      </option>
+                      <option value="2018" style="text-align: center">
+                        2018년
+                      </option>
+                      <option value="2019" style="text-align: center">
+                        2019년
+                      </option>
+                      <option value="2020" style="text-align: center">
+                        2020년
+                      </option>
+                      <option value="2021" style="text-align: center">
+                        2021년
+                      </option>
+                      <option value="2022" style="text-align: center">
+                        2022년
+                      </option>
+                    </select>
+                    <select
+                      class="form-select"
+                      aria-label="Default select example"
+                      style="width: 35%"
+                      name="Month"
+                    >
+                      <option selected style="text-align: center">월</option>
+                      <option value="1" style="text-align: center">1월</option>
+                      <option value="2" style="text-align: center">2월</option>
+                      <option value="3" style="text-align: center">3월</option>
+                      <option value="4" style="text-align: center">4월</option>
+                      <option value="5" style="text-align: center">5월</option>
+                      <option value="6" style="text-align: center">6월</option>
+                      <option value="7" style="text-align: center">7월</option>
+                      <option value="8" style="text-align: center">8월</option>
+                      <option value="9" style="text-align: center">9월</option>
+                      <option value="10" style="text-align: center">
+                        10월
+                      </option>
+                      <option value="11" style="text-align: center">
+                        11월
+                      </option>
+                      <option value="12" style="text-align: center">
+                        12월
+                      </option>
+                    </select>
+                    <br />
+                  </div>
+                  <br />
                   <br />
                 </div>
-                <br />
-                <br />
-                <div>
-                  <h3>지역</h3>
-
-                  <select
-                    class="form-select"
-                    aria-label="Default select example"
-                    style="width: 35%"
-                    onchange="ListChange(this.value)"
-                    name="See"
-                  >
-                    <option selected value="-1">도시를 선택하세요</option>
+                <div style="text-align: center">
+                  <h2>지역을 선택하세요</h2>
+                  <div style="display: flex; margin-left: 25%">
+                    <select
+                      class="form-select"
+                      aria-label="Default select example"
+                      style="width: 35%"
+                      onchange="ListChange(this.value)"
+                      name="See"
+                    >
+                      <option selected value="-1" style="text-align: center">
+                        도시
+                      </option>
+                      <script>
+                        const keys = Object.keys(region).sort()
+                        keys.forEach((e) => {
+                          document.write(
+                            "<option value=" +
+                              e +
+                              " style=" +
+                              "text-align: center" +
+                              ">" +
+                              e +
+                              "</option>"
+                          )
+                        })
+                      </script>
+                    </select>
                     <script>
-                      const keys = Object.keys(region).sort()
-                      keys.forEach((e) => {
-                        document.write(
-                          "<option value=" + e + ">" + e + "</option>"
-                        )
-                      })
-                    </script>
-                  </select>
-                  <script>
-                    function ListChange(e) {
-                      let target = document.getElementById("Goo")
-                      let goolist = region[e].sort()
-                      target.options.length = 0
+                      function ListChange(e) {
+                        let target = document.getElementById("Goo")
+                        let goolist = region[e].sort()
+                        target.options.length = 0
 
-                      for (x in goolist) {
-                        let opt = document.createElement("option")
-                        opt.value = goolist[x]
-                        opt.innerHTML = goolist[x]
-                        target.appendChild(opt)
+                        for (x in goolist) {
+                          let opt = document.createElement("option")
+                          opt.value = goolist[x]
+                          opt.innerHTML = goolist[x]
+                          target.appendChild(opt)
+                        }
                       }
-                    }
-                  </script>
-                  <select
-                    class="form-select"
-                    aria-label="Default select example"
-                    style="width: 35%"
-                    id="Goo"
-                    name="Goo"
-                  >
-                    <option selected value="-1">구를 선택하세요</option>
-                  </select>
+                    </script>
+                    <select
+                      class="form-select"
+                      aria-label="Default select example"
+                      style="width: 35%"
+                      id="Goo"
+                      name="Goo"
+                    >
+                      <option selected value="-1" style="text-align: center">
+                        구
+                      </option>
+                    </select>
+                  </div>
+                  <br />
+                  <br />
                 </div>
-                <br />
-                <br />
-
-                <br />
-
-                <div class="information-name">
-                  <input
-                    name="Fee"
-                    type="text"
-                    spellcheck="false"
-                    numberOnlyMinComma="true"
-                    koreanCurrency="true"
-                    placeholder="전기요금을 입력하세요"
-                    style="text-align: center"
-                  />
-                </div>
-
-                <br />
                 <br />
                 <div style="text-align: center">
+                  <h2>전기요금을 입력하세요</h2>
+                  <div class="information-name">
+                    <input
+                      name="Fee"
+                      type="text"
+                      spellcheck="false"
+                      numberOnlyMinComma="true"
+                      koreanCurrency="true"
+                      placeholder="전기요금"
+                      style="text-align: center; margin-left: 25%; width: 53%"
+                    />
+                  </div>
+
                   <br />
-                  <button
-                    type="submit"
-                    class="btn btn-primary btn-lg"
-                    style="
-                      width: 200px;
-                      height: 50px;
-                      background-color: aliceblue;
-                      font-size: large;
-                    "
-                    id="sub"
-                    onclick="loadSpinner()"
-                  >
-                    제출
-                  </button>
+                  <br />
+                  <div style="text-align: center">
+                    <br />
+                    <button
+                      type="submit"
+                      class="btn btn-primary btn-lg"
+                      style="
+                        width: 200px;
+                        height: 50px;
+                        background-color: aliceblue;
+                        font-size: large;
+                      "
+                      id="sub"
+                      onclick="loadSpinner()"
+                    >
+                      제출
+                    </button>
+                  </div>
                 </div>
               </form>
               <script>
