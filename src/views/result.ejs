@@ -87,24 +87,23 @@
 
   <body class="is-preload">
     <!-- Wrapper -->
-    <img src="../" alt="">
+    <a href="/"><h4><-- 뒤로가기</h4></a>
     <div id="wrapper">
       <!-- Header -->
       <header id="header" class="alt">
-        <h1>결과</h1>
-       
-        <p>
-          ##################################<br />
-        </p>
+        <h1 style="font-weight: 900; font-size: 60px">전력소비유형검사</h1>
+        <h3>[ Energy Consumption Type Indicator ]</h3>
+        <h2>검사결과</h2>
+      
       </header>
 
       <!-- Nav -->
       <nav id="nav">
         <ul>
-          <li><a href="#intro" class="active">당신의 ECTI는</a></li>
-          <li><a href="#first">전력 소비 분석</a></li>
-          <li><a href="#second">Second Section</a></li>
-          <li><a href="#cta">Get Started</a></li>
+          <li><a href="#intro" class="active" style="font-weight: 500;">당신의 ECTI는</a></li>
+          <li><a href="#first" style="font-weight: 500;">당신의 전력 소비 분석</a></li>
+          <li><a href="#second" style="font-weight: 500;">제목3</a></li>
+          <li><a href="#cta" style="font-weight: 500;">제목4</a></li>
         </ul>
       </nav>
 
@@ -115,17 +114,21 @@
           <div class="spotlight">
             <div class="content">
               <header class="major">
-                <h2>당신의 ECTI는</h2>
+                <h2 style="font-weight:900">당신의 ECTI는</h2>
               </header>
 
               <br>
 
-              <img src=<%= data[4] %> >
-              <div style="margin-top:20px">
-                당신은 <h1></h1>입니다
-
-                <p style="margin-top:20px">
-                  
+              <img style="border:3px solid grey" src=<%= data[4] %>>
+              <div style="margin-top:20px;text-align:left">
+                <br>
+                <h1 style="font-weight:900">전력소비유형: "####"</h1>
+                
+                <p class="out" style="margin-top:20px">
+                  <div class="v-line"> 
+                    <h2 style="font-weight: 300; margin-left:20px">############</h2>
+                    <h2 style="font-weight: 300; margin-left:20px">############</h2>
+                  </div>
                 </p>
               
               </div>
@@ -134,33 +137,45 @@
         <!-- First Section -->
         <section id="first" class="main special">
           <header class="major">
-            <h2>전력 소비 분석</h2>
+            <h2 style="font-weight:900">당신의 전력 소비 분석</h2>
           </header>
           <p><img src=<%= data[3] %> ></p>
-          <p><h2>평균요금 : <%=data[0]%>원 사용자요금 : <%=data[1]%>원 등급: <%=data[2]%></h2></p>
-          <footer class="major">
-            <ul class="actions special">
-              <li><a href="generic.html" class="button">Learn More</a></li>
-            </ul>
-          </footer>
+          <p class="out" style="margin-top:20px">
+            <div class="v-line" style="text-align:left"> 
+              <h2 style="font-weight: 300; margin-left:20px">############</h2>
+              <h2 style="font-weight: 300; margin-left:20px">############</h2>
+              <h2 style="font-weight: 300; margin-left:20px">평균요금 : <%=data[0]%>원 사용자요금 : <%=data[1]%>원 등급: <%=data[2]%></h2>
+            </div>
+          </p>
+        
         </section>
 
         <!-- Second Section -->
         <section id="second" class="main special">
           <header class="major">
-            <h2>Ipsum consequat</h2>
+            <h2 style="font-weight:900">#######</h2>
           </header>
-          
+          <div class="container">
+            <div style="display: flex">
+            <img src="third/국가별전기요금(가정).png" style="width:50%;height:50%" alt="">
+            <img src="third/국가별전기요금(산업용).png" style="width:50%;height:50%" alt="">
+          </div>
+          <div style="display: flex">
+            <img src="third/요금사용량.png" style="width:50%;height:50%" alt="">
+            <img src="third/한전재무상태.png" style="width:50%;height:50%" alt="">
+          </div>
+          <img src="third/전기요금개정변화율.png" style="width:80%;height:50%" alt="">
+        </div>
           
         </section>
 
         <!-- Get Started -->
         <section id="cta" class="main special">
           <header class="major">
-            <h2>Congue imperdiet</h2>
+            <h2 style="font-weight:900">#######</h2>
            
           </header>
-         
+         <img src="third/solidgauge-normal.svg" alt="">
         </section>
       </div>
 

@@ -190,13 +190,13 @@ html {
 body {
   background-color: #935d8c;
   background-image: url("images/overlay.png"),
-    -moz-linear-gradient(45deg, #777777 15%, #5b6bb4 85%);
+    -moz-linear-gradient(0deg, #5b6bb4 15%, #777777 85%);
   background-image: url("images/overlay.png"),
-    -webkit-linear-gradient(45deg, #777777 15%, #5b6bb4 85%);
+    -webkit-linear-gradient(0deg, #5b6bb4 15%, #777777 85%);
   background-image: url("images/overlay.png"),
-    -ms-linear-gradient(45deg, #777777 15%, #5b6bb4 85%);
+    -ms-linear-gradient(0deg, #5b6bb4 15%, #777777 85%);
   background-image: url("images/overlay.png"),
-    linear-gradient(45deg, #777777 15%, #5b6bb4 85%);
+    linear-gradient(0deg, #5b6bb4 15%, #777777 85%);
 }
 
 body.is-preload *,
@@ -3933,4 +3933,9 @@ input {
 .work-request--information input.has-value + label {
   top: -33px;
   font-size: 20px;
+}
+
+.v-line {
+  border-left: medium solid #00693e;
+  height: fit-content;
 }
