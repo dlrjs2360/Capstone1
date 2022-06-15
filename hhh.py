@@ -157,7 +157,7 @@ def Test(user_year,user_month,user_metroCd,user_cityCd,user_bill):
         ax.axis('equal')
         plt.tight_layout()
         
-        fig.savefig('./public/images/'+createTime+".png")
+        fig.savefig('./public/tmp/'+createTime+".png")
             
     # ================================================================================
 

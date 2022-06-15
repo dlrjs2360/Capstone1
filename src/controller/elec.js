@@ -83,7 +83,7 @@ export async function newInput(req, res) {
     const data_split = result[0].split(" ")
     console.log("파이썬으로부터 받은 값", data_split)
 
-    data_split[3] = `/images/${data_split[3]}.png`
+    data_split[3] = `/tmp/${data_split[3]}.png`
     data_split[4] = `/rank/${data_split[2]}.png`
     console.timeEnd("연산 시간 ")
     console.log(
