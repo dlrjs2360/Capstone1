@@ -23,6 +23,7 @@
     "mongodb": "^4.4.1",
     "mongoose": "^6.2.9",
     "parcel-bundler": "^1.12.5",
+    "python-shell": "^3.0.1",
     "sass": "^1.49.10"
   },
   "devDependencies": {

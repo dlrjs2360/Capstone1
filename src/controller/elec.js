@@ -1,16 +1,14 @@
 import mongoose from "mongoose"
 import spawn from "child_process"
 
+import { PythonShell } from "python-shell"
+
 const elecSchema = mongoose.Schema({
   Year: {
     type: String,
     required: true,
   },
   Month: {
-    type: String,
-    required: true,
-  },
-  Goo: {
     type: String,
     required: true,
   },
@@ -48,11 +46,17 @@ export async function Tohome(req, res) {
 
 export async function newInput(req, res) {
   let { Year, Month, See, Goo, Fee } = req.body
+
   console.log("클라이언트에서 받은 값", Year, Month, See, Goo, Fee)
   const temp = Fee.split("원")[0].replace(",", "")
 
   Fee = parseInt(temp)
 
+  var options = {
+    mode: "text",
+    pythonOptions: ["-u"],
+    args: [Year, Month, See, Goo, Fee],
+  }
   if (Year == Pyear && Month == Pmonth) {
     new Elec({
       Year,
@@ -65,17 +69,18 @@ export async function newInput(req, res) {
   }
 
   console.log("파이썬으로 넘어가는 값", Year, Month, See, Goo, Fee)
-  console.log()
-  Pyear, Pmonth
+  console.log(Pyear, Pmonth)
   console.time("연산시간")
 
   if (Year == Pyear && Month == Pmonth) {
     console.log("DB에서 값 받아오기")
   }
-  const fromPy = spawn2("python", ["/hhh.py", Year, Month, See, Goo, Fee])
-  fromPy.stdout.on("data", function (data) {
-    const result = data.toString()
-    const data_split = result.split(" ")
+  // const fromPy = spawn2("python", ["hhh.py", Year, Month, See, Goo, Fee])
+  // fromPy.stdout.on("data", function (data) {
+  PythonShell.run("hhh.py", options, function (err, result) {
+    if (err) throw err
+    console.log(result)
+    const data_split = result[0].split(" ")
     console.log("파이썬으로부터 받은 값", data_split)
 
     data_split[3] = `/images/${data_split[3]}.png`

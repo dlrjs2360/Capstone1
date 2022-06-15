@@ -170,6 +170,6 @@ def Test(user_year,user_month,user_metroCd,user_cityCd,user_bill):
     my_position = Sortation(std_bill,user_bill)
     int_result = cal(std_bill,user_bill)
     gauge(labels=['VERY LOW','LOW','AVERAGE','HIGH','VERY HIGH','EXTREME'],colors=['#2f3ecb','#c7e6fd','#f7f7f7','#ff9787','#ff4545','#ff0000'], arrow=my_position, title='User Bill')
-   
+    print(my_position)
 
 Test(int(sys.argv[1]),int(sys.argv[2]),str(sys.argv[3]),str(sys.argv[4]),int(sys.argv[5]))
