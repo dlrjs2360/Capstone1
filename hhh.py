@@ -1,17 +1,13 @@
-import requests # api 사용을 위한 모듈 import , 특정 서버에 요청해서 데이터를 가져오는 라이브러리
-import json
 import pandas as pd
 import openpyxl # excel 파일 제작을 위한 모듈 import
 from IPython.display import Image
-import os
-import matplotlib
 from matplotlib import cm
 import numpy as np
 from matplotlib.patches import Circle, Wedge, Rectangle
 import plotly.graph_objects as go
 import matplotlib.pylab as plt
 import time
-import base64
+
 
 
 import sys
