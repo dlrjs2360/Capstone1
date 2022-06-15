@@ -53,29 +53,39 @@ export async function newInput(req, res) {
 
   Fee = parseInt(temp)
 
-  console.log("파이썬으로 넘어가는 값", Year, Month, See, Goo, Fee)
-  console.time("연산시간")
-  const fromPy = spawn2("python", ["hhh.py", Year, Month, See, Goo, Fee])
+  if (Year == Pyear && Month == Pmonth) {
+    new Elec({
+      Year,
+      Month,
+      See,
+      Goo,
+      Fee,
+    }).save()
+    console.log("DB에 저장")
+  }
 
-  fromPy.stdout.on("data", function (data) {
-    const result = data.toString()
-    const data_split = result.split(" ")
-    console.log("파이썬으로부터 받은 값", data_split)
-    if (Year == Pyear && Month == Pmonth) {
-      new Elec({
-        Year,
-        Month,
-        See,
-        Goo,
-        Fee,
-      }).save()
-    }
-    data_split[3] = `/images/${data_split[3]}.png`
-    data_split[4] = `/rank/${data_split[2]}.png`
-    console.timeEnd("연산시간")
-    console.log(
-      "================================================================="
-    )
-    res.render("result", { data: data_split })
-  })
+  console.log("파이썬으로 넘어가는 값", Year, Month, See, Goo, Fee)
+  console.log()
+  Pyear, Pmonth
+  console.time("연산시간")
+
+  if (Year == Pyear && Month == Pmonth) {
+    console.log("DB에서 값 받아오기")
+  } else {
+    const fromPy = spawn2("python", ["hhh.py", Year, Month, See, Goo, Fee])
+    fromPy.stdout.on("data", function (data) {
+      const result = data.toString()
+      const data_split = result.split(" ")
+      console.log("파이썬으로부터 받은 값", data_split)
+
+      data_split[3] = `/images/${data_split[3]}.png`
+      data_split[4] = `/rank/${data_split[2]}.png`
+    })
+  }
+
+  console.timeEnd("연산시간")
+  console.log(
+    "================================================================="
+  )
+  res.render("result", { data: data_split })
 }
