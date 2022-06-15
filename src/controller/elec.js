@@ -72,7 +72,7 @@ export async function newInput(req, res) {
   if (Year == Pyear && Month == Pmonth) {
     console.log("DB에서 값 받아오기")
   }
-  const fromPy = spawn2("python", ["hhh.py", Year, Month, See, Goo, Fee])
+  const fromPy = spawn2("python", ["/hhh.py", Year, Month, See, Goo, Fee])
   fromPy.stdout.on("data", function (data) {
     const result = data.toString()
     const data_split = result.split(" ")
