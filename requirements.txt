@@ -4,4 +4,3 @@ IPython
 matplotlib
 numpy
 plotly
-time
