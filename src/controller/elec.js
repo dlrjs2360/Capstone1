@@ -80,12 +80,11 @@ export async function newInput(req, res) {
 
       data_split[3] = `/images/${data_split[3]}.png`
       data_split[4] = `/rank/${data_split[2]}.png`
+      console.timeEnd("연산시간")
+      console.log(
+        "================================================================="
+      )
+      res.render("result", { data: data_split })
     })
   }
-
-  console.timeEnd("연산시간")
-  console.log(
-    "================================================================="
-  )
-  res.render("result", { data: data_split })
 }
