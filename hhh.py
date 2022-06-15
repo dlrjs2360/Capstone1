@@ -1,5 +1,4 @@
 import pandas as pd
-import openpyxl # excel 파일 제작을 위한 모듈 import
 from IPython.display import Image
 from matplotlib import cm
 import numpy as np
