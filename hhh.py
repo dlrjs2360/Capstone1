@@ -7,11 +7,9 @@ from matplotlib.patches import Circle, Wedge, Rectangle
 import plotly.graph_objects as go
 import matplotlib.pylab as plt
 import time
-
-
-
 import sys
 import io
+
 sys.stdout = io.TextIOWrapper(sys.stdout.detach(), encoding = 'utf-8')
 sys.stderr = io.TextIOWrapper(sys.stderr.detach(), encoding = 'utf-8')
 
@@ -157,7 +155,7 @@ def Test(user_year,user_month,user_metroCd,user_cityCd,user_bill):
         ax.axis('equal')
         plt.tight_layout()
         
-        fig.savefig('./public/tmp/'+createTime+".png")
+        fig.savefig('./public/images/'+createTime+".png")
             
     # ================================================================================
 
@@ -166,6 +164,6 @@ def Test(user_year,user_month,user_metroCd,user_cityCd,user_bill):
     my_position = Sortation(std_bill,user_bill)
     int_result = cal(std_bill,user_bill)
     gauge(labels=['VERY LOW','LOW','AVERAGE','HIGH','VERY HIGH','EXTREME'],colors=['#2f3ecb','#c7e6fd','#f7f7f7','#ff9787','#ff4545','#ff0000'], arrow=my_position, title='User Bill')
-    print(my_position)
+    
 
 Test(int(sys.argv[1]),int(sys.argv[2]),str(sys.argv[3]),str(sys.argv[4]),int(sys.argv[5]))
