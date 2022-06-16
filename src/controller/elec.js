@@ -5,10 +5,14 @@ import { PythonShell } from "python-shell"
 
 const elecSchema = mongoose.Schema({
   Year: {
-    type: String,
+    type: Number,
     required: true,
   },
   Month: {
+    type: Number,
+    required: true,
+  },
+  See: {
     type: String,
     required: true,
   },
@@ -23,8 +27,6 @@ const elecSchema = mongoose.Schema({
 })
 
 const Elec = mongoose.model("Elec", elecSchema)
-
-const spawn2 = spawn.spawn
 
 const today = new Date()
 const Pyear = today.getFullYear()
@@ -77,7 +79,24 @@ export async function newInput(req, res) {
       Goo,
       Fee,
     }).save()
+    const data = await Elec.find({
+      Year: Year,
+      Month: Month,
+      See: See,
+      Goo: Goo,
+    })
+      .select("Fee")
+      .exec()
+
+    let Feesum = 0
+    let index = 0
+    data.forEach((v) => {
+      Feesum += v.Fee
+      index += 1
+    })
+
     console.log("DB에 저장")
+    res.redirect("/")
   } else {
     PythonShell.run("hhh.py", options, function (err, result) {
       if (err) throw err
