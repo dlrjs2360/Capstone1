@@ -9,6 +9,7 @@ import matplotlib.pylab as plt
 import time
 import sys
 import io
+import s3fs
 
 sys.stdout = io.TextIOWrapper(sys.stdout.detach(), encoding = 'utf-8')
 sys.stderr = io.TextIOWrapper(sys.stderr.detach(), encoding = 'utf-8')
