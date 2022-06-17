@@ -85,6 +85,44 @@
     })
   </script> -->
 
+  <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+
+<script>
+  if (!Kakao.isInitialized()) {
+    Kakao.init('c65119b660b1c1edd0a037ed560b81ba');
+
+    function kakaoShare() {
+      Kakao.Link.sendDefault({
+        objectType: 'feed',
+        content: {
+          title: 'ECTI',
+          description: 'Energy Consumption Type Indicator',
+          imageUrl: '',
+          link: {
+            mobileWebUrl: 'http://localhost:8000',
+            webUrl: 'http://localhost:8000',
+          },
+        },
+        buttons: [
+          {
+            title: '웹으로 보기',
+            link: {
+              mobileWebUrl: 'http://localhost:8000',
+              webUrl: 'http://localhost:8000',
+            },
+          },
+        ],
+        // 카카오톡 미설치 시 카카오톡 설치 경로이동
+        installTalk: true,
+      })
+    }
+
+ 
+    
+  }
+  
+</script>
+
   <body class="is-preload">
     <!-- Wrapper -->
     <a href="/"><h4><-- 뒤로가기</h4></a>
@@ -177,11 +215,25 @@
           </header>
          <img src="third/solidgauge-normal.svg" alt="">
         </section>
+
+        
       </div>
+
+      
 
       <!-- Footer -->
       <footer id="footer">
        
+<section>
+  <h2>Share your experience</h2>
+
+  <ul class="icons">
+    <a id="kakao-link-btn" href="javascript:kakaoShare()">
+    	<img src="https://developers.kakao.com/assets/img/about/logos/kakaolink/kakaolink_btn_small.png" />
+    </a>
+  </ul>
+</section>
+
         <section>
           <h2>Contact Us</h2>
           
@@ -216,6 +268,16 @@
        
       </footer>
     </div>
+
+
+
+    <script>
+      var kakaoShareBtn = document.querySelector('.kakao-share');
+      kakaoShareBtn.addEventListener('click', function() {
+          shareKakao();
+      });
+  </script>
+  
 
     <!-- Scripts -->
     <script src="/js/jquery.min.js"></script>

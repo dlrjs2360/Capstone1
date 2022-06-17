@@ -9,7 +9,8 @@ import matplotlib.pylab as plt
 import time
 import sys
 import io
-import s3fs
+# import s3fs
+# import boto3
 
 sys.stdout = io.TextIOWrapper(sys.stdout.detach(), encoding = 'utf-8')
 sys.stderr = io.TextIOWrapper(sys.stderr.detach(), encoding = 'utf-8')
@@ -156,6 +157,14 @@ def Test(user_year,user_month,user_metroCd,user_cityCd,user_bill):
         ax.axis('equal')
         plt.tight_layout()
         
+        # img_data = io.BytesIO()
+        # plt.savefig(img_data,format='png')
+        # img_data.seek(0)
+        
+        # s3 = boto3.resource('s3')
+        # bucket = s3.Bucket('ecti-image')
+        # bucket.put_object(Body=img_data, ContentType='image/png',Key='./rootkey.csv')  
+            
         fig.savefig('./public/images/'+createTime+".png")
             
     # ================================================================================

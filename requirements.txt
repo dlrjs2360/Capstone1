@@ -5,3 +5,5 @@ matplotlib
 numpy
 plotly
 openpyxl
+io
+s3fs
