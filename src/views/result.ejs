@@ -123,6 +123,8 @@
   
 </script>
 
+
+
   <body class="is-preload">
     <!-- Wrapper -->
     <a href="/"><h4><-- 뒤로가기</h4></a>
@@ -140,8 +142,8 @@
         <ul>
           <li><a href="#intro" class="active" style="font-weight: 500;">당신의 ECTI는</a></li>
           <li><a href="#first" style="font-weight: 500;">당신의 전력 소비 분석</a></li>
-          <li><a href="#second" style="font-weight: 500;">제목3</a></li>
-          <li><a href="#cta" style="font-weight: 500;">제목4</a></li>
+          <li><a href="#second" style="font-weight: 500;">전국 전력 소비 현황</a></li>
+          <li><a href="#cta" style="font-weight: 500;">절약 실천 방법</a></li>
         </ul>
       </nav>
 
@@ -160,24 +162,58 @@
               <img style="border:3px solid grey" src=<%= data[4] %>>
               <div style="margin-top:20px;text-align:left">
                 <br>
-                <h1 style="font-weight:900">전력소비유형: "####"</h1>
+                <h1 style="font-weight:900">전력소비유형: <span id="ectiid" style="background-color:papayawhip"></span></h1>
                 
-                <p class="out" style="margin-top:20px">
+                <p class="out" style="margin-top:20px"  >
                   <div class="v-line"> 
-                    <h2 style="font-weight: 300; margin-left:20px">############</h2>
-                    <h2 style="font-weight: 300; margin-left:20px">############</h2>
+                    <h2 id="ectibd" style="font-weight: 500; margin-left:20px">
+                  </h2>
                   </div>
                 </p>
               
               </div>
         </section>
+        
+        <script>
+          const x = "<%= data[2] %>"
+          if(x==1){
+              document.getElementById('ectiid').innerHTML='"전력낭비로부터 세상을 지키는 슈퍼히어로"'
+              document.getElementById('ectiid').style.fontSize = '25px'
+              document.getElementById('ectibd').innerHTML="당신의 ECTI는 <span style='font-weight:600'>'전력낭비로부터 세상을 지키는 슈퍼히어로'</span>입니다.<br>세상 전력을 혼자 쓰다시피 사용하는 당신! 너무 많은 전력을 사용하고 있는게 아닐까요?<br>당신은 6개의 등급 중 6등급입니다."
+          } else if(x==2) {
+              document.getElementById('ectiid').innerHTML='"전력을 지켜낸 영웅"'
+              document.getElementById('ectibd').innerHTML="당신의 ECTI는 <span style='font-weight:600'>'전력을 지켜낸 영웅'</span>입니다.<br>절약을 실천하려 노력하고 많은 전력을 아껴낸 당신에게 전력영웅훈장을 수여합니다!<br>당신은 6개의 등급 중 2등급입니다."
+          }
+           else if(x==3) {
+              document.getElementById('ectiid').innerHTML='"균형을 지키는 마법사"'
+              document.getElementById('ectibd').innerHTML="당신의 ECTI는 <span style='font-weight:600'>'균형을 지키는 마법사'</span>입니다.<br>많지도 적지도 않은 전력을 사용함으로써 평균적인 전력소비를 즐기는 당신은 균형의 마법사입니다!<br>당신은 6개의 등급 중 3등급입니다."
+           }
+           else if(x==4) {
+              document.getElementById('ectiid').innerHTML=' "혼란을 주도하는 조커"'
+              document.getElementById('ectibd').innerHTML="당신의 ECTI는 <span style='font-weight:600'>'혼란을 주도하는 조커'</span>입니다.<br>다른 사람들은 선풍기를 사용할 때 에어컨만 사용하는 당신! 전력혼란을 주도하는 조커입니다!<br>당신은 6개의 등급 중 4등급입니다."
+           }
+            else if(x==5) {
+              document.getElementById('ectiid').innerHTML=' "전력낭비로 수감중인 죄수"'
+              document.getElementById('ectibd').innerHTML="당신의 ECTI는 <span style='font-weight:600'>'전력낭비로 수감중인 죄수'</span>입니다.<br>전력을 과하게 소비하고 있는 당신! 필요로 하지 않는 전자제품들은 꺼보는게 어떨까요?<br>당신은 6개의 등급 중 5등급입니다."
+            }
+            else{
+              document.getElementById('ectiid').innerHTML=' "전력을 없애는 킬러"'
+              document.getElementById('ectibd').innerHTML="당신의 ECTI는 <span style='font-weight:600'>'전력을 없애는 킬러'</span>입니다.<br>세상 전력을 혼자 쓰다시피 사용하는 당신! 너무 많은 전력을 사용하고 있는게 아닐까요?<br>당신은 6개의 등급 중 6등급입니다."
+            }
+        </script>
 
         <!-- First Section -->
         <section id="first" class="main special">
           <header class="major">
             <h2 style="font-weight:900">당신의 전력 소비 분석</h2>
           </header>
-          <p><img src=<%= data[3] %> ></p>
+          <div class = 'container' style="display:flex">
+            <img src=<%= data[3] %> style="width:50%;height:50%" >
+            <img src=<%= data[5] %> style="width:50%;height:50%" >
+          </div>
+          
+          <!-- <script>alert("<%= data[5] %>")</script> -->
+
           <p class="out" style="margin-top:20px">
             <div class="v-line" style="text-align:left"> 
               <h2 style="font-weight: 300; margin-left:20px">############</h2>
@@ -191,18 +227,22 @@
         <!-- Second Section -->
         <section id="second" class="main special">
           <header class="major">
-            <h2 style="font-weight:900">#######</h2>
+            <h2 style="font-weight:900">전국 전력 소비 현황</h2>
           </header>
           <div class="container">
-            <div style="display: flex">
+            <!-- <div style="display: flex">
             <img src="third/국가별전기요금(가정).png" style="width:50%;height:50%" alt="">
             <img src="third/국가별전기요금(산업용).png" style="width:50%;height:50%" alt="">
           </div>
           <div style="display: flex">
             <img src="third/요금사용량.png" style="width:50%;height:50%" alt="">
             <img src="third/한전재무상태.png" style="width:50%;height:50%" alt="">
-          </div>
-          <img src="third/전기요금개정변화율.png" style="width:80%;height:50%" alt="">
+          </div> -->
+
+          <img src="third/아시아.png" style="width:80%;height:50%" alt="">
+          <img src="third/가정용.png" style="width:80%;height:50%" alt="">
+          <img src="third/한전.png" style="width:80%;height:50%" alt="">
+
         </div>
           
         </section>
@@ -210,16 +250,13 @@
         <!-- Get Started -->
         <section id="cta" class="main special">
           <header class="major">
-            <h2 style="font-weight:900">#######</h2>
-           
+            <h2 style="font-weight:900">절약 실천 방법</h2>
           </header>
-         <img src="third/solidgauge-normal.svg" alt="">
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/x3iy315chyc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/qHTpjy0hZUg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </section>
 
-        
       </div>
-
-      
 
       <!-- Footer -->
       <footer id="footer">
@@ -239,28 +276,8 @@
           
           <ul class="icons">
             <li>
-              <a href="#" class="icon brands fa-twitter alt"
-                ><span class="label">Twitter</span></a
-              >
-            </li>
-            <li>
-              <a href="#" class="icon brands fa-facebook-f alt"
-                ><span class="label">Facebook</span></a
-              >
-            </li>
-            <li>
-              <a href="#" class="icon brands fa-instagram alt"
-                ><span class="label">Instagram</span></a
-              >
-            </li>
-            <li>
-              <a href="#" class="icon brands fa-github alt"
+              <a href="https://github.com/dlrjs2360/Capstone1" class="icon brands fa-github alt"
                 ><span class="label">GitHub</span></a
-              >
-            </li>
-            <li>
-              <a href="#" class="icon brands fa-dribbble alt"
-                ><span class="label">Dribbble</span></a
               >
             </li>
           </ul>
